@@ -223,7 +223,7 @@ Issues are a great way to keep track of tasks, enhancements, and bugs for your p
 -   One  **assignee**  is responsible for working on the issue at any given time.
 -   **Comments**  allow anyone with access to the repository to provide feedback.
 
-## Git and GitHub related Applications
+## Git and GitHub related applications
 
 ### GitHub Desktop [Download](https://desktop.github.com/) 
 * **Attribute commits with collaborators easily**
@@ -235,5 +235,15 @@ See all open pull requests for your repositories and check them out as if they w
 * **Syntax highlighted diffs**
 The new GitHub Desktop supports syntax highlighting when viewing diffs for a variety of different languages.
 
-### Visual Studio Code
-### IntelliJ IDEs
+### Visual Studio Code 
+Using  [GitHub](https://github.com/)  with Visual Studio Code lets you share your source code and collaborate with others. GitHub integration is provided through the  [GitHub Pull Requests and Issues](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)  extension.
+
+Install the GitHub Pull Requests and Issues extension
+
+To get started with the GitHub in VS Code, you'll need to  [Create an account](https://help.github.com/github/getting-started-with-github/signing-up-for-a-new-github-account)  and install the  [GitHub Pull Requests and Issues](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)  extension. In this topic, we'll demonstrate how you can use some of your favorite parts of GitHub without leaving VS Code.
+
+#### Cloning a repository
+You can search for and clone a repository from GitHub using the  **Git: Clone**  command in the Command Palette (Ctrl+Shift+P) or by using the  **Clone Repository**  button in the Source Control view (available when you have no folder open).
+#### Authenticating with an existing repository
+Enabling authentication through GitHub happens when you run any Git action in VS Code that requires GitHub authentication, such as pushing to a repository that you're a member of or cloning a private repository. You don't need to have any special extensions installed for authentication; it is built into VS Code so that you can efficiently manage your repository.
+For more Doucmentations [Click](https://code.visualstudio.com/docs/editor/github)
