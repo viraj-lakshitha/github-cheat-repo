@@ -1,13 +1,14 @@
 # Git and GitHub
 Git is a distributed version-control system for tracking changes in any set of files, originally designed for coordinating work among programmers cooperating on source code during software development.
 
-### Difference between Git and GitHub
+## Difference between Git and GitHub
 #### What is Git ?
 First developed back in 2005, Git is an extremely popular version control system that is at the heart of a wide variety of high-profile projects. Git is installed and maintained on your local system (rather than in the cloud) and gives you a self-contained record of your ongoing programming versions. It can be used completely exclusive of any cloud-hosting service, you don’t even need internet access, except to download it.
 
 #### What is GitHub ?
 GitHub is designed as a Git repository hosting service. It’s an online database that allows you to keep track of and share your Git version control projects outside of your local computer/server. Unlike Git, GitHub is exclusively cloud-based. Also unlike Git, GitHub is a for-profit service (although basic repository-hosting features are available at no cost to those who are willing to create a user profile, making GitHub a popular choice for open-source projects).
 
+## Git Cheat Sheet
 ### Download and Install Git
 
 For Microsoft Users :  [Download](https://windows.github.com/)
@@ -103,5 +104,136 @@ Show all commits in the current branch’s history
  git log
  ```
  
- 
- 
+### Inspect and Compare
+
+*Examining logs, diffs and object information*
+
+Show the commit history for the currently active branch
+ ```
+ git log
+ ```
+Show the commits on branch A that are not on branch B
+ ```
+ git log branchB..branchA
+ ```
+Show the commits that changed file, even across renames 
+ ```
+ git log --follow <file> 
+ ```
+Show the diff of what is in branchA that is not in branchB
+ ```
+ git diff branchB...branchA 
+ ```
+Show any object in Git in human-readable format
+ ```
+ git show <object>
+ ```
+
+
+### Tracking Changes
+*Versioning file removes and path changes*
+
+ Delete the file from project and stage the removal for commit
+ ```
+ git rm <file>
+```
+Change an existing file path and stage the move
+ ```
+git mv [existing-path] [new-path] 
+```
+Show all commit logs with indication of any paths that moved
+ ```
+ git log --stat -M
+ ```
+
+### Share and Update
+
+*Retrieving updates from another repository and updating local repos*
+
+Add a Git URL as an alias
+ ```
+git remote add [alias] [url]
+ ```  
+Fetch down all the branches from that Git remote
+ ```
+git fetch [alias]
+ ```
+Merge a remote branch into your current branch to bring it up to date
+ ```
+git merge [alias]/[branch]
+ ```
+Transmit local branch commits to the remote repository branch
+ ```
+git push [alias] [branch]
+ ```
+Fetch and merge any commits from the tracking remote branch 
+ ```
+git pull 
+ ```
+
+### Rewrite History
+
+*Rewriting branches, updating commits and clearing history*
+
+Apply any commits of current branch ahead of specified one
+ ```
+ git rebase [branch]
+ ```
+
+Clear staging area, rewrite working tree from specified commit
+ ```
+ git reset --hard [commit]
+ ```
+
+
+### Temporary Commits
+*Temporarily store modified, tracked files in order to change branches*
+
+Save modified and staged changes
+ ```
+ git stash
+```
+List stack-order of stashed file changes
+ ```
+ git stash list
+ ```
+Write working from top of stash stack
+ ```
+ git stash pop
+ ```
+Discard the changes from top of stash stack 
+```
+ git stash drop
+ ```
+
+
+### What is Fork on GitHub ?
+Creating a “fork” is producing a personal copy of someone else’s project. Forks act as a sort of bridge between the original repository and your personal copy.
+When you **Fork** a repository, you create a copy of the original repository (upstream repository) but the repository remains on your GitHub account. Whereas, when you **Clone** a repository, the repository is copied on to your local machine with the help of **Git**.
+
+### What is Star on GitHub ?
+When you star somones repo on GitHub, you can get a notificaion when the owner update the repository and also You can star repositories and topics to discover similar projects on GitHub. When you star repositories or topics, GitHub may recommend related content in the discovery view of your news feed. For more information
+
+### What is Issue on GitHub ?
+Issues are a great way to keep track of tasks, enhancements, and bugs for your projects. They’re kind of like email  except they can be shared and discussed with the rest of your team. Most software projects have a bug tracker of some kind. GitHub’s tracker is called **Issues**, and has its own section in every repository
+
+-   A  **title**  and  **description**  describe what the issue is all about.  
+-   Color-coded  **labels**  help you categorize and filter your issues (just like labels in email)  
+-   A  **milestone**  acts like a container for issues. This is useful for associating issues with specific features or project phases
+-   One  **assignee**  is responsible for working on the issue at any given time.
+-   **Comments**  allow anyone with access to the repository to provide feedback.
+
+## Git and GitHub related Applications
+
+### GitHub Desktop [Download](https://desktop.github.com/) 
+* **Attribute commits with collaborators easily**
+Quickly add co-authors to your commit. Great for pairing and excellent for sending a little love/credit to that special someone who helped fix that gnarly bug of yours. See the attribution on the history page, undo an accidental attribution.
+
+* **Checkout branches with pull requests and view CI statuses**
+See all open pull requests for your repositories and check them out as if they were a local branch, even if they're from upstream branches or forks. See which pull requests pass commit status checks, too!
+
+* **Syntax highlighted diffs**
+The new GitHub Desktop supports syntax highlighting when viewing diffs for a variety of different languages.
+
+### Visual Studio Code
+### IntelliJ IDEs
